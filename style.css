@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
+@import url('https://fonts.googleapis.com/css?family=Merriweather:400,700');
+
+body {
+  background-color: white;
+  font-family: "Ubuntu", sans-serif;
+  padding: 5px 25px;
+  font-size: 18px;
+  margin: 0;
+  color: #444;
+  align-items: center;
+}
+
+h1 {
+  font-family: "Ubuntu", serif;
+  font-size: 32px;
+  margin: 3px;
+  text-align: center;
+  border: 3px black solid;
+  padding: 5px;
+
+}
+#reloj{
+  font-family: "Ubuntu", serif;
+  font-size: 24px;
+  margin: 3px;
+  text-align: center;
+  border: 3px black solid;
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  padding-top: 68px;
+  left:35%;
+}
