@@ -28,8 +28,19 @@ h1 {
   text-align: center;
   border: 3px black solid;
   border-radius: 50%;
-  width: 200px;
-  height: 200px;
-  padding-top: 68px;
+  width: 130px;
+  height: 130px;
+  padding-top: 44.2px;
   left:35%;
+}
+.rowLB:nth-child(2) {
+  background: gold;
+}
+
+.rowLB:nth-child(3) {
+  background: #c0c0c0;
+}
+
+.rowLB:nth-child(4) {
+  background: #cd7f32;
 }

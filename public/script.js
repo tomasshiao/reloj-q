@@ -194,3 +194,57 @@ function hoy() {
   segundos = elementos(segundos);
   document.getElementById("reloj").innerHTML = hora + ":" + minutos + ":" + segundos;
 };
+
+var app = new Vue({
+  el: "#app",
+  data:{
+    leaderboard: [],
+  },
+  methods:{
+    sumarPts(position){
+      app.leaderboard[position].puntaje = app.leaderboard[position].puntaje + 1 ;
+      console.log(app.leaderboard[position].puntaje);
+      app.leaderboard.sort(function(a, b){return b.puntaje - a.puntaje;})
+    },
+    restarPts(position){
+      app.leaderboard[position].puntaje = app.leaderboard[position].puntaje - 1 ;
+      console.log(app.leaderboard[position].puntaje);
+      app.leaderboard.sort(function(a, b){return b.puntaje - a.puntaje;})
+    }
+  }
+})
+
+
+function addPlayer(jugador){
+var jugador = {"nombre": "", "puntaje": NaN}
+jugador.nombre = document.getElementById("player").value;
+jugador.puntaje = parseInt(document.getElementById("score").value);
+if (jugador.nombre == ""){
+  Swal.fire({
+    icon: 'error',
+    title: 'Oops...',
+    text: 'Player must have a name!'
+  })
+}else if(isNaN(jugador.puntaje)){
+  jugador.puntaje = 0;
+  console.log(jugador);
+  app.leaderboard.push(jugador);
+  app.leaderboard.sort(function(a, b){return b.puntaje - a.puntaje;})
+  console.log(app.leaderboard);
+  jugadorAgregado();
+}else{
+console.log(jugador);
+app.leaderboard.push(jugador);
+app.leaderboard.sort(function(a, b){return b.puntaje - a.puntaje;})
+console.log(app.leaderboard);
+jugadorAgregado();
+}
+}
+function jugadorAgregado(){
+  Swal.fire({
+  icon: 'success',
+  title: 'Player saved!',
+  showConfirmButton: false,
+  timer: 1500
+})
+}

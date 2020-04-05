@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Home</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="container">
+  <div id="app">
+  <div class="row">
+    <aside class="col col-3" height="100%">
+    <h1>Reloj</h1>
+    <div id="reloj" class="center" width="100%"></div>
+    <p>Porque... ¿por qué no?</p>
+    </aside>
+    <section class="col col-7">
+      <h1>Leaderboard</h1>
+      <table class="table" col-10>
+        <tr>
+          <th class="col-6">Nombre</th><th class="col-2">Puntaje</th><th class="col-1"></th><th class="col-1"></th>
+        </tr>
+        <tr v-for="(x, index) in leaderboard" class="rowLB">
+          <td>{{x.nombre}}</td>
+          <td>{{x.puntaje}}</td>
+          <td><button v-on:click="sumarPts(index)" type="button" class="btn btn-success">+</button></td>
+          <td><button v-on:click="restarPts(index)" type="button" class="btn btn-danger">-</button></td>
+        </tr>
+      </table>
+      <div class="row">
+        <input id="player" type="text" placeholder="Jugador" class="col-5"/>
+        <input id="score" type="number" placeholder="Puntaje" class="col-5" />
+        <button onclick="addPlayer()" class="col-2 btn btn-primary">Add</button>
+      </div>
+      </section>
+    </div>
+  </div>
+  <script src="script.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+  </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+</body>
+
+</html>
