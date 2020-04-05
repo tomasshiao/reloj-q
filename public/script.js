@@ -210,8 +210,29 @@ var app = new Vue({
       app.leaderboard[position].puntaje = app.leaderboard[position].puntaje - 1 ;
       console.log(app.leaderboard[position].puntaje);
       app.leaderboard.sort(function(a, b){return b.puntaje - a.puntaje;})
+    },
+    eliminar(position){
+      Swal.fire({
+      title: 'Are you sure?',
+      text: "You won't be able to revert this!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete! Good riddance!',
+      cancelButtonText: 'Not yet, not yet.'
+    }).then((result) => {
+      if (result.value) {
+      app.leaderboard.pop(position);
+      Swal.fire(
+        'Deleted!',
+        'User has been erased.',
+        'success'
+      )
     }
+    })
   }
+}
 })
 
 
